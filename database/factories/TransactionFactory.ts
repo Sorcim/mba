@@ -4,9 +4,9 @@ import { DateTime } from 'luxon'
 
 export default Factory.define(Transaction, ({ faker }) => {
   return {
-    amount: faker.finance.amount(-100, 100).toString(),
+    amount: parseFloat(faker.finance.amount(-100, 100)),
     description: faker.lorem.sentence(),
-    date: DateTime.fromISO(faker.date.past().toJSON()).toFormat('yyyy-LL-dd'),
+    date: DateTime.fromISO(faker.date.past().toJSON()),
     accountId: 6,
   }
 }).build()
