@@ -9,7 +9,6 @@ export default class extends BaseSchema {
       table.string('description').notNullable()
       table.float('amount').notNullable()
       table.date('date').notNullable()
-      table.integer('tag_id').unsigned().references('tags.id').onDelete('CASCADE').nullable()
       table.integer('account_id').unsigned().references('accounts.id').onDelete('CASCADE')
       table.timestamp('created_at', { useTz: true })
       table.timestamp('updated_at', { useTz: true })
