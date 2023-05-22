@@ -5,13 +5,13 @@ export default class extends BaseSchema {
 
   public async up() {
     this.schema.alterTable(this.tableName, (table) => {
-      table.dropColumn('update_balance')
+      table.dropColumn('updated_balance')
     })
   }
 
   public async down() {
     this.schema.alterTable(this.tableName, (table) => {
-      table.date('update_balance').defaultTo(0)
+      table.date('updated_balance').defaultTo(0)
     })
   }
 }
